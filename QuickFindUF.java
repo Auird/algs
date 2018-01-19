@@ -20,6 +20,11 @@ public class QuickFindUF {
         return quickFind(p) == quickFind(q);
     }
 
+    /**
+     * test all pairs in a big set, it need N^2 time
+     * @param p
+     * @param q
+     */
     public void union(int p, int q){
         if(!isConnected(p , q)){
             int pId = quickFind(p);
