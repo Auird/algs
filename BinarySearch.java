@@ -23,6 +23,7 @@ public class BinarySearch {
         return -1;
     }
 
+    //not working perfectly.
     @Deprecated
     public static int binSearch(int[] a, int key, int low, int high){
         int mid = (low + high) / 2;
