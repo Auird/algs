@@ -36,5 +36,4 @@ public class QuickFindUF {
     public int count(){
         return components;
     }
-
 }
