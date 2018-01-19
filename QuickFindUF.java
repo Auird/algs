@@ -13,16 +13,24 @@ public class QuickFindUF {
     }
 
     public int quickFind(int p){
-        return 0;
+        return id[p];
     }
 
     public boolean isConnected(int p, int q){
-        return false;
-
+        return quickFind(p) == quickFind(q);
     }
 
     public void union(int p, int q){
-
+        if(!isConnected(p , q)){
+            int pId = quickFind(p);
+            int qId = quickFind(q);
+            for(int i = 0; i < id.length; i++){
+                if(quickFind(i) == pId){
+                    id[i] = qId;
+                }
+            }
+            components--;
+        }
     }
 
     public int count(){
