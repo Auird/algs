@@ -12,11 +12,18 @@ public class WeightedQuickUnionUF {
             id[i] = i;
             sz[i] = 1;
         }
+
         components = N;
     }
 
     public int find(int p){
         while(p != id[p]){
+            //One line code to implement path compression
+            //one pass
+            //pointing current node to its grandparent node
+            //make the tree almost flat
+            id[p] = id[id[p]];
+
             p = id[p];
         }
         return p;
